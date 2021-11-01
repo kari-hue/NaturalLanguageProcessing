@@ -1,1 +1,39 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type = "text/css" href = "static/styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class = "container">
+            <div id = 'brandname'>
+        Spam Detector App using NLP
+    
+    </div>
 
+    <h2> Spam Detector for Email Messages</h2>
+
+    </div>
+</header>
+<div class= "ml-container">
+    <form action="{{ url_for('predict')}}" method = "POST">
+        <p>Enter your Message/Mail which you want to predict as spam or not spam</p>
+
+        <textarea name="message" cols="50" rows="6"></textarea>
+        <br/>
+
+        <input type="Submit" class = "btn-info" value = "predict">
+
+
+
+    </form>
+</div>
+</body>
+
+<footer class = "footer">
+    <div class= "footerContainer">
+        <p class = "copyright"> Copyright 2021 @Ksrishma kunwar</p>
+    </div>
+
+</html>
