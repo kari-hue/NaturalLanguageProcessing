@@ -15,25 +15,6 @@ For this text classification problem, I simply used multinomial Bayes theorem to
 
 #### Step 1: Importing all the necessary libraries
 
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-import nltk
-import re
-from nltk.tokenize import word_tokenize
-nltk.download('punkt')
-from nltk.corpus import stopwords
-nltk.download('stopwords')
-nltk.download('wordnet')
-from nltk.stem import WordNetLemmatizer
-from autocorrect import spell
-from collections import Counter
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import classification_report
-from sklearn.metrics import roc_auc_score
-
 #### Step 2: Importing the data and doing some exploratory analysis
 ![image](https://user-images.githubusercontent.com/57294417/142883812-93ce76db-2d4e-4c04-8f84-fb574bb243df.png)
 
