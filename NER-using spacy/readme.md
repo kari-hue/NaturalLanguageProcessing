@@ -29,22 +29,26 @@ print(raw_data.head(n=10))
 
 #### Step 3: Simply used the spacy pipeline to implement NER model using nerModel() function.
 Code:
+```
 nlp = spacy.load('en_core_web_sm')
 
 def nerModel(message):
     text= nlp(message)
     for w in text.ents:
         return("Entities",w.text,w.label_)
-Step 4: Then simply exported the data in the csv file.
+        
+```
+#### Step 4: Then simply exported the data in the csv file.
 Code:
+```
 ## Exporting into csv file
 
 raw_data.to_csv (r'C:/Users/dell/Desktop/NER_entities_extraction.csv', index = False, header=True)
 
 print (raw_data)
 
+```
 
-
-Conclusion: The NER model that I have implemented is a very simple model and it is also not working that amazingly. But still it gives some certain idea about how NER actually works. In future the model can be easily modified and we can build more robust NER model using the concept of transformers and other advanced concept.
+<b> Conclusion</b>: The NER model that I have implemented is a very simple model and it is also not working that amazingly. But still it gives some certain idea about how NER actually works. In future the model can be easily modified and we can build more robust NER model using the concept of transformers and other advanced concept.
 
 
