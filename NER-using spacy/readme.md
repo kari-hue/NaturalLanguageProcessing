@@ -1,41 +1,50 @@
 # **Project Description**
 
-**Name: Financial Fraud Detection**
+**Name: Name Entity Recognition using spacy**
 
 ### <b> Description of the Project </b>
 
-This project focuses on detecting the financial fraud in the syntetic dataset of PaySim.
+This project is a simple project where a NER model is construted by using spacy.
 
-PaySim simulates mobile money transactions based on a sample of real transactions extracted from one month of financial logs from a mobile money service implemented in an African country. The original logs were provided by a multinational company, who is the provider of the mobile financial service which is currently running in more than 14 countries all around the world.
+### Step-wise implementation:
 
-This synthetic dataset is scaled down 1/4 of the original dataset and it is created just for Kaggle.
+#### Step 1: Imported necessary libraries and imported the dataset
+#### Step 2: Defined a function clean_text() in order to clean the given text.
 
-About the columns: This is a sample of 1 row with headers explanation:
+Code:
+```
+def clean_text(message):
+    message = re.sub('[^a-zA-Z]', ' ', message)
+    # message = message.lower()
+    message = message.split()
+    words = [wnl.lemmatize(word) for word in message]
+    return  " ".join(words) 
 
-1,PAYMENT,1060.31,C429214117,1089.0,28.69,M1591654462,0.0,0.0,0,0
+# Implementing the clean_text function to clean our text
 
-step - maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30 days simulation).
+raw_data['clean_text'] = raw_data['text'].apply(clean_text)
 
-type - CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.
+print(raw_data.head(n=10))	
+```
 
-amount - amount of the transaction in local currency.
+#### Step 3: Simply used the spacy pipeline to implement NER model using nerModel() function.
+Code:
+nlp = spacy.load('en_core_web_sm')
 
-nameOrig - customer who started the transaction
+def nerModel(message):
+    text= nlp(message)
+    for w in text.ents:
+        return("Entities",w.text,w.label_)
+Step 4: Then simply exported the data in the csv file.
+Code:
+## Exporting into csv file
 
-oldbalanceOrg - initial balance before the transaction
+raw_data.to_csv (r'C:/Users/dell/Desktop/NER_entities_extraction.csv', index = False, header=True)
 
-newbalanceOrig - new balance after the transaction
+print (raw_data)
 
-nameDest - customer who is the recipient of the transaction
 
-oldbalanceDest - initial balance recipient before the transaction. Note that there is not information for customers that start with M (Merchants).
 
-newbalanceDest - new balance recipient after the transaction. Note that there is not information for customers that start with M (Merchants).
+Conclusion: The NER model that I have implemented is a very simple model and it is also not working that amazingly. But still it gives some certain idea about how NER actually works. In future the model can be easily modified and we can build more robust NER model using the concept of transformers and other advanced concept.
 
-isFraud - This is the transactions made by the fraudulent agents inside the simulation. In this specific dataset the fraudulent behavior of the agents aims to profit by taking control or customers accounts and try to empty the funds by transferring to another account and then cashing out of the system.
 
-isFlaggedFraud - The business model aims to control massive transfers from one account to another and flags illegal attempts. An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
-
-**Dataset used in the project can be downloaded from below link:**
-
-https://www.kaggle.com/ealaxi/paysim1
