@@ -24,7 +24,7 @@ This project is a simple project that detects weather a message is a ham or spam
 
 ![image](https://user-images.githubusercontent.com/57294417/140099628-fd3548d4-a1e9-4d1d-8f8c-51adb137fe58.png)
 
-3.  **Overall look of the spam detector after implementing it as a web app
+3.  **Overall look of the spam detector after implementing it as a web app**
 
 ![image](https://user-images.githubusercontent.com/57294417/140099931-02b31628-a09e-4a8e-9793-cae4f14a23f3.png)
 
@@ -39,7 +39,7 @@ This project is a simple project that detects weather a message is a ham or spam
 
 
 
-**Dataset used in the project can be downloaded from below link:**
+**Dataset used in the project can be downloaded from link below:**
 
 https://www.kaggle.com/adityapatil673/spam-detector-using-nlp-and-random-forest/data
 
