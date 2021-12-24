@@ -1,7 +1,7 @@
 # Project Title: NLP on A Go 
 
 ## Description
-This project is a simple project that aims in building a application that let's the user to perform common NLP tasks on the input text. The application is demonstrated using streamlit. The features of the application is
+This project is a simple project that aims in building an application that let's the user to perform common NLP tasks on the input text. The application is demonstrated using streamlit. The features of the application is
 
 * Helps to tokenize given text
 * Performs extractive summarization
@@ -17,15 +17,15 @@ I would like to mainly focus on the text summarizer.
 
 Stepwise implementation.
 
-#### Step 1: In my text summarizer I have used mainly three techniques for it's implementation:
+#### Step 1: In my text summarizer I used mainly three techniques for it's implementation:
 
  * Simply using NLTK library
  * TextRankAlgorithm(Implemented using gensim)
  * LexRankAlgorithm(Implemented using Sumy)
 
-Step 2: Putting everything together using streamlit
+#### Step 2: Putting everything together using streamlit
 
-After implementing all these algorithms for text summarization I came up with an idea to put everything together using streamlit. Streamlit let’s you build simple and fast applications for demonstration purposes. 
+After implementing all these algorithms for text summarization I came up with an idea to put everything together using streamlit. Streamlit let’s you build simple and fast UI applications for demonstration purposes. 
 
 I simply integrated these three summarization techniques in my streamlit application that helps to summarize the text given by the user.
 
@@ -50,7 +50,7 @@ Screenshot of implemetation:
 ![image](https://user-images.githubusercontent.com/57294417/141646362-7a1b1ab0-db18-4a67-8575-6b13f52c2369.png)
 
 
-Text summarization is a really vast topic. At the end of the day, we want a summarizer having the ability to summarize the text as we humans do(a system that is able to modify the text, paraphrase, add and remove text, and whatnot). An extractive summarizer doesn’t let you do all that. But if you are just a beginner it’s a good way to start learning how text summarization actually works as extractive summarization is very easy and straightforward to implement. Implementing abstractive summarization is extremely cumbersome and is a topic still under study in the NLP field. 
+<b>CONCLUSION</b> :Text summarization is a really vast topic. At the end of the day, we want a summarizer having the ability to summarize the text as we humans do(a system that is able to modify the text, paraphrase, add and remove text, and whatnot). An extractive summarizer doesn’t let you do all that. But if you are just a beginner it’s a good way to start learning how text summarization actually works as extractive summarization is very easy and straightforward to implement. Implementing abstractive summarization is extremely cumbersome and is a topic still under study in the NLP field. 
 
 
 
